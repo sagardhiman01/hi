@@ -1,0 +1,23 @@
+﻿2026-07-19T21:17:45.9867198Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-19T21:17:45.9868341Z Post job cleanup.
+2026-07-19T21:17:46.1686578Z In post-action step
+2026-07-19T21:17:46.1694417Z Stopping all Gradle daemons before saving Gradle User Home state
+2026-07-19T21:17:46.1695431Z Stopping Gradle daemons for /home/runner/gradle-installations/installs/gradle-8.4
+2026-07-19T21:17:46.1705825Z (node:2520) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-19T21:17:46.1706639Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-19T21:17:46.1711931Z [command]/home/runner/gradle-installations/installs/gradle-8.4/bin/gradle --stop
+2026-07-19T21:17:47.0541925Z Stopping Daemon(s)
+2026-07-19T21:17:47.0542463Z 1 Daemon stopped
+2026-07-19T21:17:47.0646403Z ##[group]Caching Gradle state
+2026-07-19T21:17:47.2615055Z Caching dependencies with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and cache key: gradle-dependencies-v1-18f8ea0b0d4690912fd629d64fd9b8d5
+2026-07-19T21:17:47.3009699Z Caching instrumented-jars with path '/home/runner/.gradle/caches/jars-*/*/' and cache key: gradle-instrumented-jars-v1-839ad968f2de5ff23ae07988873135d8
+2026-07-19T21:17:47.3567132Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/hi/hi --files-from manifest.txt --use-compress-program zstdmt
+2026-07-19T21:17:47.4971299Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/hi/hi --files-from manifest.txt --use-compress-program zstdmt
+2026-07-19T21:17:47.9843319Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/modules-*/files-*/*/*/*/*' and key: gradle-dependencies-v1-18f8ea0b0d4690912fd629d64fd9b8d5: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0+z5dagAAAAAZzoAxW46wRbbYmbQ49PQtUEhYMzFFREdFMDUxNABFZGdl
+2026-07-19T21:17:48.0818314Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches/jars-*/*/' and key: gradle-instrumented-jars-v1-839ad968f2de5ff23ae07988873135d8: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0/D5dagAAAACAlKJc0kJDT6BKZXV+FH7pUEhYMzFFREdFMDIwNgBFZGdl
+2026-07-19T21:17:48.1084003Z Caching Gradle User Home with cache key: gradle-home-v1|Linux|build[5df42585ae8f8da228c604b8b4e8707c]-815433c0ee3225f3e3adc232877d2717de228409
+2026-07-19T21:17:48.1161097Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/hi/hi --files-from manifest.txt --use-compress-program zstdmt
+2026-07-19T21:17:48.3928679Z ##[warning]Failed to save cache entry with path '/home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle' and key: gradle-home-v1|Linux|build[5df42585ae8f8da228c604b8b4e8707c]-815433c0ee3225f3e3adc232877d2717de228409: Error: <h2>Our services aren't available right now</h2><p>We're working to restore all services as soon as possible. Please check back soon.</p>0/D5dagAAAABJwjmjqLHDTrrJtmGWqyfsUEhYMzFFREdFMDYxNgBFZGdl
+2026-07-19T21:17:48.3931850Z ##[endgroup]
+2026-07-19T21:17:48.3932366Z Generating Job Summary
+2026-07-19T21:17:48.3944284Z Completed post-action step

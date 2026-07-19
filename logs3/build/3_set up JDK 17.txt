@@ -1,0 +1,32 @@
+﻿2026-07-19T21:16:31.6664206Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-19T21:16:31.6666077Z ##[group]Run actions/setup-java@v4
+2026-07-19T21:16:31.6666335Z with:
+2026-07-19T21:16:31.6666531Z   java-version: 17
+2026-07-19T21:16:31.6666740Z   distribution: temurin
+2026-07-19T21:16:31.6666946Z   cache: gradle
+2026-07-19T21:16:31.6667139Z   java-package: jdk
+2026-07-19T21:16:31.6667348Z   check-latest: false
+2026-07-19T21:16:31.6667549Z   server-id: github
+2026-07-19T21:16:31.6667756Z   server-username: GITHUB_ACTOR
+2026-07-19T21:16:31.6668000Z   server-password: GITHUB_TOKEN
+2026-07-19T21:16:31.6668236Z   overwrite-settings: true
+2026-07-19T21:16:31.6668458Z   job-status: success
+2026-07-19T21:16:31.6670927Z   token: ***
+2026-07-19T21:16:31.6671128Z ##[endgroup]
+2026-07-19T21:16:31.8251265Z ##[group]Installed distributions
+2026-07-19T21:16:31.8415813Z Resolved Java 17.0.19+10 from tool-cache
+2026-07-19T21:16:31.8416602Z Setting Java 17.0.19+10 as the default
+2026-07-19T21:16:31.8427004Z (node:2212) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-07-19T21:16:31.8428228Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-07-19T21:16:31.8431045Z Creating toolchains.xml for JDK version 17 from temurin
+2026-07-19T21:16:31.8501607Z Writing to /home/runner/.m2/toolchains.xml
+2026-07-19T21:16:31.8502356Z 
+2026-07-19T21:16:31.8502805Z Java configuration:
+2026-07-19T21:16:31.8507155Z   Distribution: temurin
+2026-07-19T21:16:31.8508328Z   Version: 17.0.19+10
+2026-07-19T21:16:31.8509406Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:16:31.8510388Z 
+2026-07-19T21:16:31.8511174Z ##[endgroup]
+2026-07-19T21:16:31.8532133Z Creating settings.xml with server-id: github
+2026-07-19T21:16:31.8553022Z Writing to /home/runner/.m2/settings.xml
+2026-07-19T21:16:32.1065132Z gradle cache is not found

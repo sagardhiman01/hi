@@ -1,0 +1,102 @@
+﻿2026-07-19T21:10:38.1452332Z ##[group]Run gradle assembleDebug
+2026-07-19T21:10:38.1452758Z [36;1mgradle assembleDebug[0m
+2026-07-19T21:10:38.1538662Z shell: /usr/bin/bash -e {0}
+2026-07-19T21:10:38.1538983Z env:
+2026-07-19T21:10:38.1539329Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:10:38.1539838Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:10:38.1540268Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-07-19T21:10:38.1540610Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-07-19T21:10:38.1540941Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-07-19T21:10:38.1541699Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-07-19T21:10:38.1542192Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-07-19T21:10:38.1542543Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-07-19T21:10:38.1542824Z ##[endgroup]
+2026-07-19T21:10:38.7380560Z 
+2026-07-19T21:10:38.7381785Z Welcome to Gradle 8.4!
+2026-07-19T21:10:38.7391597Z 
+2026-07-19T21:10:38.7392207Z Here are the highlights of this release:
+2026-07-19T21:10:38.7393020Z  - Compiling and testing with Java 21
+2026-07-19T21:10:38.7393938Z  - Faster Java compilation on Windows
+2026-07-19T21:10:38.7394717Z  - Role focused dependency configurations creation
+2026-07-19T21:10:38.7395369Z 
+2026-07-19T21:10:38.7395930Z For more details see https://docs.gradle.org/8.4/release-notes.html
+2026-07-19T21:10:38.7396638Z 
+2026-07-19T21:10:38.9374042Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-07-19T21:11:05.4352976Z Checking the license for package Android SDK Build-Tools 33.0.1 in /usr/local/lib/android/sdk/licenses
+2026-07-19T21:11:05.4372543Z License for package Android SDK Build-Tools 33.0.1 accepted.
+2026-07-19T21:11:05.4376100Z Preparing "Install Android SDK Build-Tools 33.0.1 v.33.0.1".
+2026-07-19T21:11:06.6350820Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" ready.
+2026-07-19T21:11:06.6351887Z Installing Android SDK Build-Tools 33.0.1 in /usr/local/lib/android/sdk/build-tools/33.0.1
+2026-07-19T21:11:06.6352710Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" complete.
+2026-07-19T21:11:06.9350166Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" finished.
+2026-07-19T21:11:07.2366457Z > Task :app:preBuild UP-TO-DATE
+2026-07-19T21:11:07.2370130Z > Task :app:preDebugBuild UP-TO-DATE
+2026-07-19T21:11:07.3350803Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+2026-07-19T21:11:07.3353581Z > Task :app:javaPreCompileDebug
+2026-07-19T21:11:10.6356714Z > Task :app:checkDebugAarMetadata FAILED
+2026-07-19T21:11:10.7349260Z 
+2026-07-19T21:11:10.7350534Z FAILURE: Build failed with an exception.
+2026-07-19T21:11:10.7353469Z 
+2026-07-19T21:11:10.7379402Z * What went wrong:
+2026-07-19T21:11:10.7380241Z Execution failed for task ':app:checkDebugAarMetadata'.
+2026-07-19T21:11:10.7381951Z > Configuration `:app:debugRuntimeClasspath` contains AndroidX dependencies, but the `android.useAndroidX` property is not enabled, which may cause runtime issues.
+2026-07-19T21:11:10.7383560Z   Set `android.useAndroidX=true` in the `gradle.properties` file and retry.
+2026-07-19T21:11:10.7384439Z   The following AndroidX dependencies are detected:
+2026-07-19T21:11:10.7385277Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1
+2026-07-19T21:11:10.7389736Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.activity:activity:1.8.0
+2026-07-19T21:11:10.7412280Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.annotation:annotation:1.3.0
+2026-07-19T21:11:10.7504908Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.collection:collection:1.1.0
+2026-07-19T21:11:10.7604468Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.core:core:1.9.0
+2026-07-19T21:11:10.7605435Z 2 actionable tasks: 2 executed
+2026-07-19T21:11:10.7632618Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.annotation:annotation-experimental:1.3.0
+2026-07-19T21:11:10.7671966Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.core:core:1.9.0 -> androidx.concurrent:concurrent-futures:1.1.0
+2026-07-19T21:11:10.7722939Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.lifecycle:lifecycle-runtime:2.6.1
+2026-07-19T21:11:10.7752933Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.savedstate:savedstate:1.2.1 -> androidx.arch.core:core-common:2.2.0
+2026-07-19T21:11:10.7782845Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.lifecycle:lifecycle-livedata-core:2.6.1 -> androidx.arch.core:core-runtime:2.2.0
+2026-07-19T21:11:10.7802495Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.savedstate:savedstate:1.2.1 -> androidx.lifecycle:lifecycle-common:2.6.1
+2026-07-19T21:11:10.7812670Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.loader:loader:1.0.0 -> androidx.lifecycle:lifecycle-livedata:2.6.1
+2026-07-19T21:11:10.7842600Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.lifecycle:lifecycle-livedata-core:2.6.1
+2026-07-19T21:11:10.7872439Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0 -> androidx.lifecycle:lifecycle-process:2.6.1
+2026-07-19T21:11:10.7902240Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0 -> androidx.startup:startup-runtime:1.1.1
+2026-07-19T21:11:10.7904141Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.activity:activity:1.8.0 -> androidx.tracing:tracing:1.0.0
+2026-07-19T21:11:10.7932207Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.lifecycle:lifecycle-viewmodel:2.6.1
+2026-07-19T21:11:10.7963799Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1
+2026-07-19T21:11:10.7966030Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.core:core-ktx:1.9.0
+2026-07-19T21:11:10.7967233Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.savedstate:savedstate:1.2.1
+2026-07-19T21:11:10.7968782Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.activity:activity:1.8.0 -> androidx.profileinstaller:profileinstaller:1.3.0
+2026-07-19T21:11:10.7970595Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.core:core:1.9.0 -> androidx.versionedparcelable:versionedparcelable:1.1.1
+2026-07-19T21:11:10.7972560Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1
+2026-07-19T21:11:10.7973907Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.vectordrawable:vectordrawable:1.1.0
+2026-07-19T21:11:10.7975555Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable-animated:1.1.0
+2026-07-19T21:11:10.7982971Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.appcompat:appcompat-resources:1.6.1 -> androidx.vectordrawable:vectordrawable-animated:1.1.0 -> androidx.interpolator:interpolator:1.0.0
+2026-07-19T21:11:10.7985037Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.cursoradapter:cursoradapter:1.0.0
+2026-07-19T21:11:10.7986507Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.drawerlayout:drawerlayout:1.1.1
+2026-07-19T21:11:10.7988188Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.drawerlayout:drawerlayout:1.1.1 -> androidx.customview:customview:1.1.0
+2026-07-19T21:11:10.7990223Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2:1.2.0
+2026-07-19T21:11:10.7991796Z   :app:debugRuntimeClasspath -> androidx.appcompat:appcompat:1.6.1 -> androidx.emoji2:emoji2-views-helper:1.2.0
+2026-07-19T21:11:10.7993341Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6
+2026-07-19T21:11:10.7994998Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.viewpager:viewpager:1.0.0
+2026-07-19T21:11:10.7996780Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.fragment:fragment:1.3.6 -> androidx.loader:loader:1.0.0
+2026-07-19T21:11:10.7998508Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.resourceinspection:resourceinspection-annotation:1.0.1
+2026-07-19T21:11:10.7999885Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0
+2026-07-19T21:11:10.8001244Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.cardview:cardview:1.0.0
+2026-07-19T21:11:10.8002758Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.coordinatorlayout:coordinatorlayout:1.1.0
+2026-07-19T21:11:10.8004122Z   :app:debugRuntimeClasspath -> androidx.constraintlayout:constraintlayout:2.1.4
+2026-07-19T21:11:10.8005548Z   :app:debugRuntimeClasspath -> androidx.constraintlayout:constraintlayout:2.1.4 -> androidx.constraintlayout:constraintlayout-core:1.0.4
+2026-07-19T21:11:10.8007614Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.dynamicanimation:dynamicanimation:1.0.0
+2026-07-19T21:11:10.8009630Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.dynamicanimation:dynamicanimation:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0
+2026-07-19T21:11:10.8012208Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.dynamicanimation:dynamicanimation:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.documentfile:documentfile:1.0.0
+2026-07-19T21:11:10.8015410Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.dynamicanimation:dynamicanimation:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.localbroadcastmanager:localbroadcastmanager:1.0.0
+2026-07-19T21:11:10.8018229Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.dynamicanimation:dynamicanimation:1.0.0 -> androidx.legacy:legacy-support-core-utils:1.0.0 -> androidx.print:print:1.0.0
+2026-07-19T21:11:10.8028251Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.recyclerview:recyclerview:1.1.0
+2026-07-19T21:11:10.8029802Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.transition:transition:1.2.0
+2026-07-19T21:11:10.8031415Z   :app:debugRuntimeClasspath -> com.google.android.material:material:1.10.0 -> androidx.viewpager2:viewpager2:1.0.0
+2026-07-19T21:11:10.8032314Z 
+2026-07-19T21:11:10.8032604Z * Try:
+2026-07-19T21:11:10.8033145Z > Run with --stacktrace option to get the stack trace.
+2026-07-19T21:11:10.8033902Z > Run with --info or --debug option to get more log output.
+2026-07-19T21:11:10.8034595Z > Run with --scan to get full insights.
+2026-07-19T21:11:10.8035249Z > Get more help at https://help.gradle.org.
+2026-07-19T21:11:10.8035746Z 
+2026-07-19T21:11:10.8036038Z BUILD FAILED in 32s
+2026-07-19T21:11:11.1623863Z ##[error]Process completed with exit code 1.

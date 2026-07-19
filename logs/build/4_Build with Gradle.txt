@@ -1,0 +1,40 @@
+﻿2026-07-19T21:06:23.9277419Z ##[group]Run gradle assembleDebug
+2026-07-19T21:06:23.9278442Z [36;1mgradle assembleDebug[0m
+2026-07-19T21:06:23.9365181Z shell: /usr/bin/bash -e {0}
+2026-07-19T21:06:23.9365969Z env:
+2026-07-19T21:06:23.9366895Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:06:23.9368783Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:06:23.9370539Z ##[endgroup]
+2026-07-19T21:06:26.8082156Z 
+2026-07-19T21:06:26.8084295Z Welcome to Gradle 9.6.1!
+2026-07-19T21:06:26.8084688Z 
+2026-07-19T21:06:26.8084923Z Here are the highlights of this release:
+2026-07-19T21:06:26.8085629Z  - Improved Configuration Cache hit rates
+2026-07-19T21:06:26.8091195Z  - Additional CLI rendering options
+2026-07-19T21:06:26.8091905Z  - Important project hierarchy lookup deprecations
+2026-07-19T21:06:26.8092441Z 
+2026-07-19T21:06:26.8092976Z For more details see https://docs.gradle.org/9.6.1/release-notes.html
+2026-07-19T21:06:26.8093482Z 
+2026-07-19T21:06:27.2068706Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-07-19T21:06:52.5090306Z 
+2026-07-19T21:06:52.5090418Z 
+2026-07-19T21:06:52.5093429Z FAILURE: Build failed with an exception.
+2026-07-19T21:06:52.5094594Z [Incubating] Problems report is available at: file:///home/runner/work/hi/hi/build/reports/problems/problems-report.html
+2026-07-19T21:06:52.5096178Z 
+2026-07-19T21:06:52.5096417Z * What went wrong:
+2026-07-19T21:06:52.5097172Z 'org.gradle.api.artifacts.Dependency org.gradle.api.artifacts.dsl.DependencyHandler.module(java.lang.Object)'
+2026-07-19T21:06:52.5097668Z 
+2026-07-19T21:06:52.5097748Z * Try:
+2026-07-19T21:06:52.5098033Z > Run with --stacktrace option to get the stack trace.
+2026-07-19T21:06:52.5098428Z > Run with --info or --debug option to get more log output.
+2026-07-19T21:06:52.5098891Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+2026-07-19T21:06:52.5100179Z > Get more help at https://help.gradle.org.
+2026-07-19T21:06:52.5102200Z 
+2026-07-19T21:06:52.5102436Z 
+2026-07-19T21:06:52.5102597Z BUILD FAILED in 28s
+2026-07-19T21:06:52.5103294Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+2026-07-19T21:06:52.5103954Z 
+2026-07-19T21:06:52.5104761Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2026-07-19T21:06:52.5105698Z 
+2026-07-19T21:06:52.5106624Z For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2026-07-19T21:06:52.8830089Z ##[error]Process completed with exit code 1.

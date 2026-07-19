@@ -1,0 +1,89 @@
+﻿2026-07-19T21:16:35.7595174Z ##[group]Run gradle assembleDebug
+2026-07-19T21:16:35.7595608Z [36;1mgradle assembleDebug[0m
+2026-07-19T21:16:35.7645707Z shell: /usr/bin/bash -e {0}
+2026-07-19T21:16:35.7646002Z env:
+2026-07-19T21:16:35.7646318Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:16:35.7646799Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64
+2026-07-19T21:16:35.7647217Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2026-07-19T21:16:35.7647534Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2026-07-19T21:16:35.7647821Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2026-07-19T21:16:35.7648241Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2026-07-19T21:16:35.7648714Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2026-07-19T21:16:35.7649026Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2026-07-19T21:16:35.7649278Z ##[endgroup]
+2026-07-19T21:16:36.7475573Z 
+2026-07-19T21:16:36.7495931Z Welcome to Gradle 8.4!
+2026-07-19T21:16:36.7525103Z 
+2026-07-19T21:16:36.7535511Z Here are the highlights of this release:
+2026-07-19T21:16:36.7555688Z  - Compiling and testing with Java 21
+2026-07-19T21:16:36.7565325Z  - Faster Java compilation on Windows
+2026-07-19T21:16:36.7565858Z  - Role focused dependency configurations creation
+2026-07-19T21:16:36.7566261Z 
+2026-07-19T21:16:36.7566600Z For more details see https://docs.gradle.org/8.4/release-notes.html
+2026-07-19T21:16:36.7567093Z 
+2026-07-19T21:16:37.2401605Z Starting a Gradle Daemon (subsequent builds will be faster)
+2026-07-19T21:17:07.2401291Z Checking the license for package Android SDK Build-Tools 33.0.1 in /usr/local/lib/android/sdk/licenses
+2026-07-19T21:17:07.2425023Z License for package Android SDK Build-Tools 33.0.1 accepted.
+2026-07-19T21:17:07.2426012Z Preparing "Install Android SDK Build-Tools 33.0.1 v.33.0.1".
+2026-07-19T21:17:08.7396610Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" ready.
+2026-07-19T21:17:08.7406042Z Installing Android SDK Build-Tools 33.0.1 in /usr/local/lib/android/sdk/build-tools/33.0.1
+2026-07-19T21:17:08.7406932Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" complete.
+2026-07-19T21:17:08.9398926Z "Install Android SDK Build-Tools 33.0.1 v.33.0.1" finished.
+2026-07-19T21:17:09.3425766Z > Task :app:preBuild UP-TO-DATE
+2026-07-19T21:17:09.3455855Z > Task :app:preDebugBuild UP-TO-DATE
+2026-07-19T21:17:09.3466154Z > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+2026-07-19T21:17:09.4418489Z > Task :app:javaPreCompileDebug
+2026-07-19T21:17:15.1430598Z > Task :app:generateDebugResValues
+2026-07-19T21:17:15.1456624Z > Task :app:checkDebugAarMetadata
+2026-07-19T21:17:15.2402298Z > Task :app:mapDebugSourceSetPaths
+2026-07-19T21:17:15.2403268Z > Task :app:generateDebugResources
+2026-07-19T21:17:16.4436072Z > Task :app:packageDebugResources
+2026-07-19T21:17:17.4396027Z > Task :app:mergeDebugResources
+2026-07-19T21:17:17.5423001Z > Task :app:createDebugCompatibleScreenManifests
+2026-07-19T21:17:17.5423805Z > Task :app:extractDeepLinksDebug
+2026-07-19T21:17:17.6440967Z > Task :app:parseDebugLocalResources
+2026-07-19T21:17:17.8415783Z 
+2026-07-19T21:17:17.8424285Z > Task :app:processDebugMainManifest
+2026-07-19T21:17:17.8425402Z package="com.example.antiaddictionapp" found in source AndroidManifest.xml: /home/runner/work/hi/hi/app/src/main/AndroidManifest.xml.
+2026-07-19T21:17:17.8426497Z Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+2026-07-19T21:17:17.8427580Z Recommendation: remove package="com.example.antiaddictionapp" from the source AndroidManifest.xml: /home/runner/work/hi/hi/app/src/main/AndroidManifest.xml.
+2026-07-19T21:17:18.1407359Z 
+2026-07-19T21:17:18.1408086Z > Task :app:processDebugManifest
+2026-07-19T21:17:18.2409872Z > Task :app:mergeDebugShaders
+2026-07-19T21:17:18.2435914Z > Task :app:compileDebugShaders NO-SOURCE
+2026-07-19T21:17:18.2458555Z > Task :app:generateDebugAssets UP-TO-DATE
+2026-07-19T21:17:18.2496398Z > Task :app:mergeDebugAssets
+2026-07-19T21:17:18.2501664Z > Task :app:compressDebugAssets
+2026-07-19T21:17:18.2502192Z > Task :app:processDebugJavaRes NO-SOURCE
+2026-07-19T21:17:20.3405923Z > Task :app:mergeDebugJavaResource
+2026-07-19T21:17:20.3530373Z > Task :app:desugarDebugFileDependencies
+2026-07-19T21:17:20.3531270Z > Task :app:mergeDebugJniLibFolders
+2026-07-19T21:17:20.4415829Z > Task :app:checkDebugDuplicateClasses
+2026-07-19T21:17:20.4416938Z > Task :app:mergeDebugNativeLibs NO-SOURCE
+2026-07-19T21:17:41.7394580Z > Task :app:processDebugManifestForPackage
+2026-07-19T21:17:41.7425582Z > Task :app:mergeLibDexDebug
+2026-07-19T21:17:43.5405936Z > Task :app:stripDebugDebugSymbols NO-SOURCE
+2026-07-19T21:17:44.1403182Z > Task :app:processDebugResources FAILED
+2026-07-19T21:17:45.1396232Z > Task :app:validateSigningDebug
+2026-07-19T21:17:45.3394690Z > Task :app:mergeExtDexDebug
+2026-07-19T21:17:45.4405343Z 
+2026-07-19T21:17:45.4436022Z FAILURE: Build failed with an exception.
+2026-07-19T21:17:45.4436616Z 23 actionable tasks: 23 executed
+2026-07-19T21:17:45.4437245Z 
+2026-07-19T21:17:45.4437530Z * What went wrong:
+2026-07-19T21:17:45.4438128Z Execution failed for task ':app:processDebugResources'.
+2026-07-19T21:17:45.4439495Z > A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+2026-07-19T21:17:45.4440705Z    > Android resource linking failed
+2026-07-19T21:17:45.4442281Z      /home/runner/work/hi/hi/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml:21: error: resource mipmap/ic_launcher (aka com.example.antiaddictionapp:mipmap/ic_launcher) not found.
+2026-07-19T21:17:45.4445016Z      /home/runner/work/hi/hi/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml:21: error: resource mipmap/ic_launcher_round (aka com.example.antiaddictionapp:mipmap/ic_launcher_round) not found.
+2026-07-19T21:17:45.4446684Z      error: failed processing manifest.
+2026-07-19T21:17:45.4447131Z 
+2026-07-19T21:17:45.4447263Z 
+2026-07-19T21:17:45.4447519Z * Try:
+2026-07-19T21:17:45.4448065Z > Run with --stacktrace option to get the stack trace.
+2026-07-19T21:17:45.4449182Z > Run with --info or --debug option to get more log output.
+2026-07-19T21:17:45.4449859Z > Run with --scan to get full insights.
+2026-07-19T21:17:45.4450506Z > Get more help at https://help.gradle.org.
+2026-07-19T21:17:45.4450973Z 
+2026-07-19T21:17:45.4451236Z BUILD FAILED in 1m 9s
+2026-07-19T21:17:45.9693288Z ##[error]Process completed with exit code 1.

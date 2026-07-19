@@ -1,0 +1,73 @@
+﻿2026-07-19T21:16:31.0030688Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-19T21:16:31.0038522Z ##[group]Run actions/checkout@v4
+2026-07-19T21:16:31.0039099Z with:
+2026-07-19T21:16:31.0039363Z   repository: sagardhiman01/hi
+2026-07-19T21:16:31.0042077Z   token: ***
+2026-07-19T21:16:31.0042326Z   ssh-strict: true
+2026-07-19T21:16:31.0042571Z   ssh-user: git
+2026-07-19T21:16:31.0042822Z   persist-credentials: true
+2026-07-19T21:16:31.0043096Z   clean: true
+2026-07-19T21:16:31.0043359Z   sparse-checkout-cone-mode: true
+2026-07-19T21:16:31.0043660Z   fetch-depth: 1
+2026-07-19T21:16:31.0043915Z   fetch-tags: false
+2026-07-19T21:16:31.0044178Z   show-progress: true
+2026-07-19T21:16:31.0044422Z   lfs: false
+2026-07-19T21:16:31.0044656Z   submodules: false
+2026-07-19T21:16:31.0045155Z   set-safe-directory: true
+2026-07-19T21:16:31.0045668Z ##[endgroup]
+2026-07-19T21:16:31.1026521Z Syncing repository: sagardhiman01/hi
+2026-07-19T21:16:31.1028112Z ##[group]Getting Git version info
+2026-07-19T21:16:31.1028531Z Working directory is '/home/runner/work/hi/hi'
+2026-07-19T21:16:31.1029252Z [command]/usr/bin/git version
+2026-07-19T21:16:31.1100687Z git version 2.54.0
+2026-07-19T21:16:31.1120623Z ##[endgroup]
+2026-07-19T21:16:31.1136009Z Temporarily overriding HOME='/home/runner/work/_temp/0acae020-a31c-41b3-b2e7-2879fbb931bd' before making global git config changes
+2026-07-19T21:16:31.1137510Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-19T21:16:31.1141927Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hi/hi
+2026-07-19T21:16:31.1187019Z Deleting the contents of '/home/runner/work/hi/hi'
+2026-07-19T21:16:31.1190707Z ##[group]Initializing the repository
+2026-07-19T21:16:31.1195810Z [command]/usr/bin/git init /home/runner/work/hi/hi
+2026-07-19T21:16:31.1285457Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-19T21:16:31.1286195Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-19T21:16:31.1287286Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-19T21:16:31.1288257Z hint: call:
+2026-07-19T21:16:31.1288897Z hint:
+2026-07-19T21:16:31.1289711Z hint: 	git config --global init.defaultBranch <name>
+2026-07-19T21:16:31.1290342Z hint:
+2026-07-19T21:16:31.1291046Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-19T21:16:31.1291855Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-19T21:16:31.1292586Z hint:
+2026-07-19T21:16:31.1293180Z hint: 	git branch -m <name>
+2026-07-19T21:16:31.1293900Z hint:
+2026-07-19T21:16:31.1294497Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-19T21:16:31.1295432Z Initialized empty Git repository in /home/runner/work/hi/hi/.git/
+2026-07-19T21:16:31.1302217Z [command]/usr/bin/git remote add origin https://github.com/sagardhiman01/hi
+2026-07-19T21:16:31.1339350Z ##[endgroup]
+2026-07-19T21:16:31.1340306Z ##[group]Disabling automatic garbage collection
+2026-07-19T21:16:31.1343173Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-19T21:16:31.1369077Z ##[endgroup]
+2026-07-19T21:16:31.1370019Z ##[group]Setting up auth
+2026-07-19T21:16:31.1375871Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-19T21:16:31.1406030Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-19T21:16:31.1725483Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-19T21:16:31.1755382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-19T21:16:31.1970661Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-19T21:16:31.2007350Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-19T21:16:31.2184881Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-19T21:16:31.2215513Z ##[endgroup]
+2026-07-19T21:16:31.2216053Z ##[group]Fetching the repository
+2026-07-19T21:16:31.2225400Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +815433c0ee3225f3e3adc232877d2717de228409:refs/remotes/origin/main
+2026-07-19T21:16:31.6211564Z From https://github.com/sagardhiman01/hi
+2026-07-19T21:16:31.6212519Z  * [new ref]         815433c0ee3225f3e3adc232877d2717de228409 -> origin/main
+2026-07-19T21:16:31.6244055Z ##[endgroup]
+2026-07-19T21:16:31.6244493Z ##[group]Determining the checkout info
+2026-07-19T21:16:31.6247237Z ##[endgroup]
+2026-07-19T21:16:31.6252821Z [command]/usr/bin/git sparse-checkout disable
+2026-07-19T21:16:31.6290955Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-19T21:16:31.6313950Z ##[group]Checking out the ref
+2026-07-19T21:16:31.6319798Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-19T21:16:31.6371452Z Switched to a new branch 'main'
+2026-07-19T21:16:31.6372793Z branch 'main' set up to track 'origin/main'.
+2026-07-19T21:16:31.6377746Z ##[endgroup]
+2026-07-19T21:16:31.6412379Z [command]/usr/bin/git log -1 --format=%H
+2026-07-19T21:16:31.6431489Z 815433c0ee3225f3e3adc232877d2717de228409

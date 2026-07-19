@@ -6,10 +6,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,10 +29,25 @@ public class MainActivity extends AppCompatActivity {
     private ComponentName componentName;
     private DevicePolicyManager devicePolicyManager;
 
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Initialize the Google Mobile Ads SDK
+        MobileAds.initialize(this, initializationStatus -> {});
+
+        // Load Banner Ad
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        // Load Interstitial Ad
+        loadInterstitialAd();
 
         devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
         componentName = new ComponentName(this, AdminReceiver.class);
@@ -30,24 +56,87 @@ public class MainActivity extends AppCompatActivity {
         Button btnEnableAdmin = findViewById(R.id.btnEnableAdmin);
         Button btnSetupAppLocker = findViewById(R.id.btnSetupAppLocker);
         
-        btnSetupDns.setOnClickListener(v -> {
+        btnSetupDns.setOnClickListener(v -> showInterstitialAd(() -> {
             Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
             try {
                 startActivity(intent);
                 Toast.makeText(this, "Find 'Private DNS' and set it to: adult-filter-dns.cleanbrowsing.org", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
-                // Fallback if ACTION_WIRELESS_SETTINGS is not available
                 startActivity(new Intent(Settings.ACTION_SETTINGS));
             }
-        });
+        }));
 
         btnEnableAdmin.setOnClickListener(v -> enableDeviceAdmin());
         
-        btnSetupAppLocker.setOnClickListener(v -> {
+        btnSetupAppLocker.setOnClickListener(v -> showInterstitialAd(() -> {
             Intent accessibilityIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
             startActivity(accessibilityIntent);
             Toast.makeText(this, "Please enable Anti-Addiction Shield in Accessibility Services", Toast.LENGTH_LONG).show();
-        });
+        }));
+    }
+
+    private void loadInterstitialAd() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        // Test Interstitial Ad Unit ID
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitialAd = interstitialAd;
+                        Log.i(TAG, "onAdLoaded");
+                        
+                        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+                            @Override
+                            public void onAdDismissedFullScreenContent() {
+                                Log.d(TAG, "The ad was dismissed.");
+                                // Ad dismissed, load a new one
+                                mInterstitialAd = null;
+                                loadInterstitialAd();
+                            }
+
+                            @Override
+                            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                Log.d(TAG, "The ad failed to show.");
+                                mInterstitialAd = null;
+                            }
+
+                            @Override
+                            public void onAdShowedFullScreenContent() {
+                                Log.d(TAG, "The ad was shown.");
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        Log.d(TAG, loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+    }
+
+    private void showInterstitialAd(Runnable onAdClosedAction) {
+        if (mInterstitialAd != null) {
+            mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    Log.d(TAG, "The ad was dismissed.");
+                    mInterstitialAd = null;
+                    loadInterstitialAd(); // Reload for next time
+                    onAdClosedAction.run(); // Execute the pending action
+                }
+                
+                @Override
+                public void onAdFailedToShowFullScreenContent(AdError adError) {
+                    mInterstitialAd = null;
+                    onAdClosedAction.run(); // Execute anyway if ad fails
+                }
+            });
+            mInterstitialAd.show(this);
+        } else {
+            Log.d(TAG, "The interstitial ad wasn't ready yet.");
+            onAdClosedAction.run(); // Execute action immediately if ad not loaded
+        }
     }
     
     @Override

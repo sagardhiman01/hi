@@ -43,11 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startVpn() {
         Intent intent = new Intent(this, LocalVpnService.class);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
-        }
+        startService(intent);
         
         TextView statusText = findViewById(R.id.statusText);
         statusText.setText("Protection is Permanently ON");

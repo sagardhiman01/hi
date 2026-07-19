@@ -47,19 +47,30 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="This application intercepts DNS requests to block adult content system-wide. Protection is permanently active once permissions are granted."
+        android:text="To block adult websites with NO lag, set your phone's Private DNS to:\nadult-filter-dns.cleanbrowsing.org"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorSecondary"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statusText" />
+
+    <Button
+        android:id="@+id/btnSetupDns"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="1. Setup Private DNS (Web Block)"
+        app:layout_constraintBottom_toTopOf="@+id/btnEnableAdmin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnEnableAdmin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Enable Uninstall Protection"
+        android:text="2. Enable Uninstall Protection"
         app:layout_constraintBottom_toTopOf="@+id/btnSetupAppLocker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

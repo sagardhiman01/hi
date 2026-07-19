@@ -55,6 +55,18 @@
         app:layout_constraintTop_toBottomOf="@+id/statusText" />
 
     <Button
+        android:id="@+id/btnUpgradePro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="⭐ Upgrade to PRO (No Ads)"
+        android:backgroundTint="#FFD700"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/btnSetupDns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/btnSetupDns"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

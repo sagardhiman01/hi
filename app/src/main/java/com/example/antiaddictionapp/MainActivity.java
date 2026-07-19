@@ -4,9 +4,11 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -38,16 +40,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
+        boolean isPremium = prefs.getBoolean("isPremium", false);
+
+        mAdView = findViewById(R.id.adView);
+        Button btnUpgradePro = findViewById(R.id.btnUpgradePro);
+
         // Initialize the Google Mobile Ads SDK
         MobileAds.initialize(this, initializationStatus -> {});
 
-        // Load Banner Ad
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        // Load Interstitial Ad
-        loadInterstitialAd();
+        if (!isPremium) {
+            // Load Banner Ad
+            AdRequest adRequest = new AdRequest.Builder().build();
+            mAdView.loadAd(adRequest);
+            // Load Interstitial Ad
+            loadInterstitialAd();
+            
+            btnUpgradePro.setOnClickListener(v -> {
+                startActivity(new Intent(this, PremiumActivity.class));
+            });
+        } else {
+            mAdView.setVisibility(View.GONE);
+            btnUpgradePro.setVisibility(View.GONE);
+        }
 
         devicePolicyManager = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
         componentName = new ComponentName(this, AdminReceiver.class);
@@ -116,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showInterstitialAd(Runnable onAdClosedAction) {
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
+        if (prefs.getBoolean("isPremium", false)) {
+            onAdClosedAction.run();
+            return;
+        }
+
         if (mInterstitialAd != null) {
             mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                 @Override
@@ -149,6 +170,13 @@ public class MainActivity extends AppCompatActivity {
         } else {
             btnEnableAdmin.setText("2. Enable Uninstall Protection");
             btnEnableAdmin.setEnabled(true);
+        }
+        
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
+        if (prefs.getBoolean("isPremium", false)) {
+            if (mAdView != null) mAdView.setVisibility(View.GONE);
+            Button btnUpgradePro = findViewById(R.id.btnUpgradePro);
+            if (btnUpgradePro != null) btnUpgradePro.setVisibility(View.GONE);
         }
     }
 

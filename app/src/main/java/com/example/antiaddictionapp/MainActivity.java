@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.security.crypto.EncryptedSharedPreferences;
+import androidx.security.crypto.MasterKey;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -39,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        if (SecurityUtils.isDeviceRooted()) {
+            Toast.makeText(this, "Security Warning: Rooted device detected! Some features may be disabled.", Toast.LENGTH_LONG).show();
+        }
 
-        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
-        boolean isPremium = prefs.getBoolean("isPremium", false);
+        boolean isPremium = isUserPremium();
 
         mAdView = findViewById(R.id.adView);
         Button btnUpgradePro = findViewById(R.id.btnUpgradePro);
@@ -131,8 +136,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showInterstitialAd(Runnable onAdClosedAction) {
-        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
-        if (prefs.getBoolean("isPremium", false)) {
+        if (isUserPremium()) {
             onAdClosedAction.run();
             return;
         }
@@ -172,11 +176,30 @@ public class MainActivity extends AppCompatActivity {
             btnEnableAdmin.setEnabled(true);
         }
         
-        SharedPreferences prefs = getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
-        if (prefs.getBoolean("isPremium", false)) {
+        if (isUserPremium()) {
             if (mAdView != null) mAdView.setVisibility(View.GONE);
             Button btnUpgradePro = findViewById(R.id.btnUpgradePro);
             if (btnUpgradePro != null) btnUpgradePro.setVisibility(View.GONE);
+        }
+    }
+    
+    private boolean isUserPremium() {
+        try {
+            MasterKey masterKey = new MasterKey.Builder(this)
+                    .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+                    .build();
+
+            SharedPreferences prefs = EncryptedSharedPreferences.create(
+                    this,
+                    "SecureAppPrefs",
+                    masterKey,
+                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            );
+            return prefs.getBoolean("isPremium", false) && !SecurityUtils.isDeviceRooted();
+        } catch (Exception e) {
+            Log.e(TAG, "Security Error reading premium status", e);
+            return false;
         }
     }
 

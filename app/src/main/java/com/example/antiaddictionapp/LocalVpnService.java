@@ -31,14 +31,6 @@ public class LocalVpnService extends VpnService {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        createNotificationChannel();
-        Notification notification = new NotificationCompat.Builder(this, "VPN_CHANNEL_ID")
-                .setContentTitle("AntiAddiction Protection")
-                .setContentText("CleanBrowsing DNS is permanently active.")
-                .setSmallIcon(android.R.drawable.ic_secure)
-                .setOngoing(true)
-                .build();
-        startForeground(1, notification);
 
         if (!isRunning) {
             isRunning = true;
@@ -48,19 +40,7 @@ public class LocalVpnService extends VpnService {
         return START_STICKY;
     }
 
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel serviceChannel = new NotificationChannel(
-                    "VPN_CHANNEL_ID",
-                    "VPN Service Channel",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            if (manager != null) {
-                manager.createNotificationChannel(serviceChannel);
-            }
-        }
-    }
+
 
     private void setupVpn() {
         Builder builder = new Builder();
